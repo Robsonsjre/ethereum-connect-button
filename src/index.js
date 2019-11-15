@@ -2,20 +2,29 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './styles.css'
+import AddressButton from './AddressButton'
 
-export default class ExampleComponent extends Component {
+const redirectEtherscan = currentAddress => {
+  if (!currentAddress) return
+  window.open('https://etherscan.io/address/' + currentAddress, '_blank')
+}
+export default class EthereumButton extends Component {
   static propTypes = {
-    text: PropTypes.string
+    account: PropTypes.string,
+    diameter: PropTypes.number
   }
 
   render() {
-    const {
-      text
-    } = this.props
+    const { account, diameter } = this.props
 
     return (
       <div className={styles.test}>
-        Example Component: {text}
+        <button
+          onClick={() => redirectEtherscan(account)}
+          className={styles.wallet}
+        >
+          {account ? <AddressButton account={account} diameter={diameter} /> : 'Connect'}
+        </button>
       </div>
     )
   }
