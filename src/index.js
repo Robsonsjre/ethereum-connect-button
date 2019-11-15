@@ -18,14 +18,16 @@ export default class EthereumButton extends Component {
     const { account, diameter } = this.props
 
     return (
-      <div className={styles.test}>
-        <button
-          onClick={() => redirectEtherscan(account)}
-          className={styles.wallet}
-        >
-          {account ? <AddressButton account={account} diameter={diameter} /> : 'Connect'}
-        </button>
-      </div>
+      <button
+        onClick={() => redirectEtherscan(account)}
+        className={styles.wallet}
+      >
+        {account ? (
+          <AddressButton account={account} diameter={diameter} />
+        ) : (
+          'Connect'
+        )}
+      </button>
     )
   }
 }

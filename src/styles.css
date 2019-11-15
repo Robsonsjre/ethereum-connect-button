@@ -1,8 +1,24 @@
-/* add css styles here (optional) */
+.addressButton {
+  display: flex;
+  justify-content: space-evenly; 
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.wallet {
+  background-color: #2a323e;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+  display: flex;
+}
+
+.wallet:hover {
+  opacity: 1;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  cursor: pointer;
 }

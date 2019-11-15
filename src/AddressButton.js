@@ -1,12 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Jazzicon from 'react-jazzicon'
+import styles from './styles.css'
 import jsNumberForAddress from 'react-jazzicon/lib/jsNumberForAddress'
 import beautyAddress from './beautyAddress.js'
-
-const styles = {
-  width: 100
-}
 
 const AddressButton = props => (
   <div className={styles.addressButton}>
@@ -21,6 +18,10 @@ const AddressButton = props => (
 AddressButton.propTypes = {
   diameter: PropTypes.number,
   account: PropTypes.string
+}
+
+AddressButton.defaultProps = {
+  diameter: 30
 }
 
 export default AddressButton
